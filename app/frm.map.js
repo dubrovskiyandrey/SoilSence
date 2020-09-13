@@ -167,21 +167,21 @@ function init(){
 							57.688476,
 							55.512178
 						]]
-	var polygon = L.polygon(latlngs, {color: 'red'}).addTo(get_map);
+	var polygon = L.polygon(latlngs, {color: 'red'}).addTo(get_map).on('click dblclick', function(){LoadScript("./app/frm.field.js");});
 	
-				var mapzoom = 10;
-				get_map.flyTo(latlngs[0], mapzoom, {animate:false});
+	var mapzoom = 15;
+	get_map.flyTo(latlngs[0], mapzoom, {animate:false});
 				
-	var imageUrl = './data/fld.png';
-	var imageBounds = [[57.688476, 55.522134], [57.687695, 55.512178]];
-	L.imageOverlay(imageUrl, imageBounds).addTo(get_map);	
+	var imageUrl = './data/fld1.png';
+	var imageBounds = [[57.688476, 55.511727], [57.685228, 55.522134]];
+	L.imageOverlay(imageUrl, imageBounds).addTo(get_map).on('click dblclick', function(){});	
 /*
 		setTimeout(function(){
 				//get_map.panTo([56.4356078302148,57.1774116424068], 15, {animate:true});
 				var mapzoom = 10;
 				get_map.flyTo([56.4356078302148,57.1774116424068], mapzoom, {animate:false});
 		}, 1000);
-	*/
+*/
 }
 	
 function unloadform(){
